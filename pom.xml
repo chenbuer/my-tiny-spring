@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>us.codecraft</groupId>
+    <groupId>com.chenbuer</groupId>
     <artifactId>tiny-ioc</artifactId>
     <version>0.1.1-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
@@ -9,16 +9,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-    <name>tiny-ioc</name>
+    <name>my-tiny-ioc</name>
     <description>
         A tinu ioc container for study.
     </description>
-    <url>https://github.com/code4craft/xsoup/</url>
+    <url>https://github.com/chenbuer/my-tiny-spring/</url>
     <developers>
         <developer>
-            <id>code4craft</id>
-            <name>Yihua huang</name>
-            <email>code4crafer@gmail.com</email>
+            <id>chenbuer</id>
+            <name>chenbuer</name>
+            <email>chenbuer@126.com</email>
         </developer>
     </developers>
    <licenses>
@@ -29,7 +29,6 @@
   </licenses>
 
         <dependencies>
-
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -41,7 +40,6 @@
                 <artifactId>dom4j</artifactId>
                 <version>1.6.1</version>
             </dependency>
-
         </dependencies>
 
     <build>
