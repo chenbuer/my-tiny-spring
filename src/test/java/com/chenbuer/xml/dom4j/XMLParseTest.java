@@ -1,4 +1,4 @@
-package com.chenbuer.test;
+package com.chenbuer.xml.dom4j;
 
 import org.dom4j.Attribute;
 import org.dom4j.DocumentException;

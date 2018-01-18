@@ -11,7 +11,8 @@ import java.util.Map;
  */
 // 抽象类实现接口并不需要复写方法
 public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader{
-    private Map<String, BeanDefinition> registry;
+    // buer:这个registry就是所有bean和他name存储的大工厂
+    private Map<String, BeanDefinition> registry;//registry:注册表
 
     private ResourceLoader resourceLoader;
 
