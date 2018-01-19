@@ -3,6 +3,7 @@ package com.chenbuer.tinyioc.xml;
 import com.chenbuer.tinyioc.AbstractBeanDefinitionReader;
 import com.chenbuer.tinyioc.BeanDefinition;
 import com.chenbuer.tinyioc.PropertyValue;
+import com.chenbuer.tinyioc.PropertyValues;
 import com.chenbuer.tinyioc.io.ResourceLoader;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
@@ -15,11 +16,13 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
+import static com.sun.tools.internal.xjc.reader.Ring.add;
+
 /**
  * Created by buer on 2018/1/18.
  */
-public class XmlBeanDefintionReader extends AbstractBeanDefinitionReader{
-    public XmlBeanDefintionReader(ResourceLoader resourceLoader) {
+public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader{
+    public XmlBeanDefinitionReader(ResourceLoader resourceLoader) {
         super(resourceLoader);
     }
 
@@ -98,11 +101,13 @@ public class XmlBeanDefintionReader extends AbstractBeanDefinitionReader{
                 }else if ("value".equals(propertyAttr.getName())){
                     value = propertyAttr.getValue();
                 }
-                // 这样就组成了一个属性键值对
-                PropertyValue propertyValue = new PropertyValue(name,value);
-                // 将刚刚获取到的propertyValue设置进bean中
-                beanDefinition.getPropertyValues().add(propertyValue);
             }
+            // 这样就组成了一个属性键值对
+            PropertyValue propertyValue = new PropertyValue(name,value);
+            // 将刚刚获取到的propertyValue设置进bean中
+            PropertyValues propertyValues = beanDefinition.getPropertyValues();
+            propertyValues.add(propertyValue);
+
 
 
 
