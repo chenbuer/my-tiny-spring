@@ -1,6 +1,7 @@
 参考[tiny-spring](https://github.com/code4craft/tiny-spring)
 
 ### 理解：
+#### step4
 1. AbstractBeanDefinitionReader中的registry（类型为Map<String, BeanDefinition> registry）已经有了bean的工厂的意义，但是在AbstractBeanDefinitionReader并没有将BeanDefinition中的bean字段实例化而已。
 
 2. 上面的表述的正确的`AbstractBeanDefinitionReader`中的`registry`是一个HashMap<String, BeanDefinition>；
