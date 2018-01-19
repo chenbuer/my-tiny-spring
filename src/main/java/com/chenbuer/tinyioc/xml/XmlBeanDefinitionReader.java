@@ -16,8 +16,6 @@ import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.sun.tools.internal.xjc.reader.Ring.add;
-
 /**
  * Created by buer on 2018/1/18.
  */

@@ -2,7 +2,6 @@ package com.chenbuer.tinyioc;
 
 import com.chenbuer.tinyioc.io.ResourceLoader;
 
-import java.rmi.registry.Registry;
 import java.util.HashMap;
 import java.util.Map;
 
