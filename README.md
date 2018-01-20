@@ -20,6 +20,11 @@
 #### step5：bean之间的依赖注入
 1. 为了实现bean之间的依赖，解决问题的关键是怎么知道这个属性对应的value值是的自定义的bean？很简单：在xml中写的`ref`，而不是`value`。在代码中怎么体现value是bean？自顶一个`BeanReference`，在解析xml的时候，讲value解析成为一个`BeanReference`对象，这样就区分开了。除此之外（解析xml的不同地方），在实例化对象之后给对象添加propertyValue的时候，也要区分。
 
+2. 出现问题：当一个bean A的ref为另一个bean B的时候，要初始化A了，但是B还没有初始化。解决方法：lazy-init。解决思路：在getBean没有获取到的bean的对象的时候，立即去init所以要的bean。
+解决步骤：
+    - 首先：bean的初始化是放在`doCreateBean`方法中完成的
+    - 其次：原来调用`doCreateBean`是在`registerBeanDefinition`中完成的，现在在这个步骤中不需要实例化bean，只需要在`beanDefinitionMap`中注册一下
+    - 最后：将`doCreateBean`放到getBean中来。（见`AbstractBeanFactory`）
 
 
 

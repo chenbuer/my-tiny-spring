@@ -36,7 +36,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 //        Object bean = doCreateBean(beanDefinition);
 //        beanDefinition.setBean(bean);
 //        beanDefinitionMap.put(name, beanDefinition);
-        //====为了lazy-load，register的时候不在实例化bean了,而是只是在beanDefinitionMap中注册一下，具体的实例化是在getBean的时候完成
+        //====为了lazy-init，register的时候不在实例化bean了,而是只是在beanDefinitionMap中注册一下，具体的实例化是在getBean的时候完成
 //        beanDefinitionNames.add(name);
         beanDefinitionMap.put(name, beanDefinition);
     }
