@@ -2,6 +2,8 @@ package com.chenbuer.tinyioc.factory;
 
 import com.chenbuer.tinyioc.BeanDefinition;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,6 +14,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
     private Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<String, BeanDefinition>();
 
+//    private final List<String> beanDefinitionNames = new ArrayList<String>();
 
     @Override
     public Object getBean(String name) throws IllegalAccessException, NoSuchFieldException, InstantiationException {
@@ -23,15 +26,18 @@ public abstract class AbstractBeanFactory implements BeanFactory {
         Object bean = beanDefinition.getBean();
         if (null == bean){
             // todo:这个时候才表示该bean没有被实例化
-            doCreateBean(beanDefinition);
+            bean = doCreateBean(beanDefinition);
         }
         return bean;
     }
 
     @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
-        Object bean = doCreateBean(beanDefinition);
-        beanDefinition.setBean(bean);
+//        Object bean = doCreateBean(beanDefinition);
+//        beanDefinition.setBean(bean);
+//        beanDefinitionMap.put(name, beanDefinition);
+        //====为了lazy-load，register的时候不在实例化bean了,而是只是在beanDefinitionMap中注册一下，具体的实例化是在getBean的时候完成
+//        beanDefinitionNames.add(name);
         beanDefinitionMap.put(name, beanDefinition);
     }
 

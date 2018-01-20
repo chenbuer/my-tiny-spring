@@ -33,7 +33,7 @@ public class BeanFactoryTest {
         HelloWorldService hw = (HelloWorldService) factory.getBean("hw");
         System.out.println(hw);
 
-        OutputService outputService = (OutputService) factory.getBean("hw");
+        OutputService outputService = (OutputService) factory.getBean("outputService");
         System.out.println(outputService);
     }
 }
