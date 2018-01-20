@@ -1,6 +1,7 @@
 package com.chenbuer.factory;
 
 import com.chenbuer.HelloWorldService;
+import com.chenbuer.OutputService;
 import com.chenbuer.tinyioc.BeanDefinition;
 import com.chenbuer.tinyioc.factory.AutowireCapableBeanFactory;
 import com.chenbuer.tinyioc.factory.BeanFactory;
@@ -32,5 +33,8 @@ public class BeanFactoryTest {
         // 3.获取到想要的bean
         HelloWorldService hw = (HelloWorldService) factory.getBean("hw");
         System.out.println(hw);
+
+        OutputService outputService = (OutputService) factory.getBean("hw");
+        System.out.println(outputService);
     }
 }

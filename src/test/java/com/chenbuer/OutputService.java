@@ -13,4 +13,11 @@ public class OutputService {
     public void setHelloWorldService(HelloWorldService helloWorldService) {
         this.helloWorldService = helloWorldService;
     }
+
+    @Override
+    public String toString() {
+        return "OutputService{" +
+                "helloWorldService=" + helloWorldService +
+                '}';
+    }
 }
