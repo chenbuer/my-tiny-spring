@@ -7,7 +7,7 @@ public class PropertyValues {
 
     List<PropertyValue> propertyValueList = new ArrayList<PropertyValue>();
 
-    public void add(PropertyValue propertyValue){
+    public void addPropertyValue(PropertyValue propertyValue){
         propertyValueList.add(propertyValue);
 
     }

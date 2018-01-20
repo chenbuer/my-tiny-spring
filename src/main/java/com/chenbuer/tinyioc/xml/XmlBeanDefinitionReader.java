@@ -1,9 +1,6 @@
 package com.chenbuer.tinyioc.xml;
 
-import com.chenbuer.tinyioc.AbstractBeanDefinitionReader;
-import com.chenbuer.tinyioc.BeanDefinition;
-import com.chenbuer.tinyioc.PropertyValue;
-import com.chenbuer.tinyioc.PropertyValues;
+import com.chenbuer.tinyioc.*;
 import com.chenbuer.tinyioc.io.ResourceLoader;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
@@ -92,22 +89,40 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader{
             // 获取到属性名 && 获取到属性值
             String name = null;
             String value = null;
+            String ref = null;// 要是是注入的bean，写ref
             for (Attribute propertyAttr :
                     propertyAttrs) {
                 if ("name".equals(propertyAttr.getName())){
                     name = propertyAttr.getValue();
                 }else if ("value".equals(propertyAttr.getName())){
                     value = propertyAttr.getValue();
+                }else if ("ref".equals(propertyAttr.getName())){
+                    ref = propertyAttr.getValue();
                 }
             }
-            // 这样就组成了一个属性键值对
-            PropertyValue propertyValue = new PropertyValue(name,value);
-            // 将刚刚获取到的propertyValue设置进bean中
-            PropertyValues propertyValues = beanDefinition.getPropertyValues();
-            propertyValues.add(propertyValue);
 
+            if (name == null || name.length() == 0){
+                // 要是name没有取到值的话，那就没用了
+                // todo:加一个日志打印
+                continue;
+            }
 
-
+            // 要是value是有值得话，那就是普通字段注入
+            if (null != value && value.length() > 0){
+                // 这样就组成了一个属性键值对
+                PropertyValue propertyValue = new PropertyValue(name,value);
+                // 将刚刚获取到的propertyValue设置进bean中
+                PropertyValues propertyValues = beanDefinition.getPropertyValues();
+                propertyValues.addPropertyValue(propertyValue);
+            }else if (ref != null && ref.length() > 0){
+                // 这样就是bean的依赖注入
+                BeanReference beanReference = new BeanReference(ref);
+                // 这样就组成了一个属性键值对
+                PropertyValue propertyValue = new PropertyValue(name,beanReference);
+                // 将刚刚获取到的propertyValue设置进bean中
+                PropertyValues propertyValues = beanDefinition.getPropertyValues();
+                propertyValues.addPropertyValue(propertyValue);
+            }
 
         }
     }
