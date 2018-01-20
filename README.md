@@ -16,3 +16,11 @@
 
 > 不同点：
 - xml的解析不采用jdk原生的接口，而是直接使用dom4j。
+
+#### step5：bean之间的依赖注入
+1. 为了实现bean之间的依赖，解决问题的关键是怎么知道这个属性对应的value值是的自定义的bean？很简单：在xml中写的`ref`，而不是`value`。在代码中怎么体现value是bean？自顶一个`BeanReference`，在解析xml的时候，讲value解析成为一个`BeanReference`对象，这样就区分开了。除此之外（解析xml的不同地方），在实例化对象之后给对象添加propertyValue的时候，也要区分。
+
+
+
+
+
