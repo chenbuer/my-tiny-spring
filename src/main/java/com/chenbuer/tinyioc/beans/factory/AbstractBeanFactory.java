@@ -1,9 +1,7 @@
-package com.chenbuer.tinyioc.factory;
+package com.chenbuer.tinyioc.beans.factory;
 
-import com.chenbuer.tinyioc.BeanDefinition;
+import com.chenbuer.tinyioc.beans.BeanDefinition;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 

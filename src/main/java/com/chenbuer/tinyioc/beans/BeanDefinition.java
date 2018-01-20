@@ -1,4 +1,4 @@
-package com.chenbuer.tinyioc;
+package com.chenbuer.tinyioc.beans;
 
 public class BeanDefinition {
     // todo:为什么要这个bean，

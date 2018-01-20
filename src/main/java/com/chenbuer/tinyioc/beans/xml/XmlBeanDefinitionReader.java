@@ -1,7 +1,11 @@
-package com.chenbuer.tinyioc.xml;
+package com.chenbuer.tinyioc.beans.xml;
 
 import com.chenbuer.tinyioc.*;
-import com.chenbuer.tinyioc.io.ResourceLoader;
+import com.chenbuer.tinyioc.beans.AbstractBeanDefinitionReader;
+import com.chenbuer.tinyioc.beans.BeanDefinition;
+import com.chenbuer.tinyioc.beans.PropertyValue;
+import com.chenbuer.tinyioc.beans.PropertyValues;
+import com.chenbuer.tinyioc.beans.io.ResourceLoader;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -16,7 +20,7 @@ import java.util.List;
 /**
  * Created by buer on 2018/1/18.
  */
-public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader{
+public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
     public XmlBeanDefinitionReader(ResourceLoader resourceLoader) {
         super(resourceLoader);
     }

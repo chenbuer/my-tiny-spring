@@ -2,10 +2,10 @@ package com.chenbuer.factory;
 
 import com.chenbuer.HelloWorldService;
 import com.chenbuer.OutputService;
-import com.chenbuer.tinyioc.BeanDefinition;
-import com.chenbuer.tinyioc.factory.AutowireCapableBeanFactory;
-import com.chenbuer.tinyioc.factory.BeanFactory;
-import com.chenbuer.tinyioc.io.ResourceLoader;
+import com.chenbuer.tinyioc.beans.BeanDefinition;
+import com.chenbuer.tinyioc.beans.factory.AutowireCapableBeanFactory;
+import com.chenbuer.tinyioc.beans.factory.BeanFactory;
+import com.chenbuer.tinyioc.beans.io.ResourceLoader;
 import com.chenbuer.tinyioc.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 

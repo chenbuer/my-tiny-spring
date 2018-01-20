@@ -1,6 +1,6 @@
-package com.chenbuer.tinyioc;
+package com.chenbuer.tinyioc.beans;
 
-import com.chenbuer.tinyioc.io.ResourceLoader;
+import com.chenbuer.tinyioc.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;

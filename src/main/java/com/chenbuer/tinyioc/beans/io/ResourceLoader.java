@@ -1,4 +1,4 @@
-package com.chenbuer.tinyioc.io;
+package com.chenbuer.tinyioc.beans.io;
 
 import java.net.URL;
 

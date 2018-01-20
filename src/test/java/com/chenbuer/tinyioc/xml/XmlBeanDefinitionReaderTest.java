@@ -1,7 +1,7 @@
 package com.chenbuer.tinyioc.xml;
 
-import com.chenbuer.tinyioc.BeanDefinition;
-import com.chenbuer.tinyioc.io.ResourceLoader;
+import com.chenbuer.tinyioc.beans.BeanDefinition;
+import com.chenbuer.tinyioc.beans.io.ResourceLoader;
 import org.junit.Test;
 
 import java.util.Map;

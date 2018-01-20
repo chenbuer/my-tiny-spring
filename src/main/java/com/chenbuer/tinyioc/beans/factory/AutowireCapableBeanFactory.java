@@ -1,8 +1,8 @@
-package com.chenbuer.tinyioc.factory;
+package com.chenbuer.tinyioc.beans.factory;
 
-import com.chenbuer.tinyioc.BeanDefinition;
+import com.chenbuer.tinyioc.beans.BeanDefinition;
 import com.chenbuer.tinyioc.BeanReference;
-import com.chenbuer.tinyioc.PropertyValue;
+import com.chenbuer.tinyioc.beans.PropertyValue;
 
 import java.lang.reflect.Field;
 import java.util.List;

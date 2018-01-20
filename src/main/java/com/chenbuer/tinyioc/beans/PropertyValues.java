@@ -1,4 +1,4 @@
-package com.chenbuer.tinyioc;
+package com.chenbuer.tinyioc.beans;
 
 import java.util.ArrayList;
 import java.util.List;
