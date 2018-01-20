@@ -6,6 +6,8 @@ package com.chenbuer.tinyioc;
  */
 public class PropertyValue {
     private String name;
+
+    // todo:相当注意：这里的value设置为Object，是为了适应value为不同的类型，同样的这个类型可以是其他的bean！
     private Object value;
 
     public PropertyValue(String name, Object value) {

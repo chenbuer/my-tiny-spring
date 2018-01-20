@@ -1,6 +1,7 @@
 package com.chenbuer.tinyioc.factory;
 
 import com.chenbuer.tinyioc.BeanDefinition;
+import com.chenbuer.tinyioc.BeanReference;
 import com.chenbuer.tinyioc.PropertyValue;
 
 import java.lang.reflect.Field;
@@ -41,7 +42,13 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory{
         for (PropertyValue propertyValue : propertyValueList) {
             Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());
             declaredField.setAccessible(true);
-            declaredField.set(bean, propertyValue.getValue());
+            Object value = propertyValue.getValue();
+            if (value instanceof BeanReference){
+                BeanReference ref = (BeanReference) value;
+                // todo:要是此时被依赖的bean在这个bean定义的后面怎么办
+                value = getBean(ref.getName());
+            }
+            declaredField.set(bean, value);
 
         }
     }
