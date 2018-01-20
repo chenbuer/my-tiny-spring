@@ -1,7 +1,8 @@
 package com.chenbuer.tinyioc;
 
 public class BeanDefinition {
-    // todo:为什么要这个bean
+    // todo:为什么要这个bean，
+    // 解释：这个bean是BeanFactory去实例化的
     private Object bean;
 
     private Class beanClass;
@@ -28,7 +29,6 @@ public class BeanDefinition {
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;
         try {
-            // todo: 为什么要这么设计？根据beanClassName设置beanClass
             this.beanClass = Class.forName(beanClassName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
