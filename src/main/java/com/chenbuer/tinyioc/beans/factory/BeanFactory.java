@@ -8,6 +8,4 @@ import com.chenbuer.tinyioc.beans.BeanDefinition;
 public interface BeanFactory {
 
     Object getBean(String name) throws IllegalAccessException, NoSuchFieldException, InstantiationException;
-
-    void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception;
 }

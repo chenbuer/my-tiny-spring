@@ -3,10 +3,10 @@ package com.chenbuer.factory;
 import com.chenbuer.HelloWorldService;
 import com.chenbuer.OutputService;
 import com.chenbuer.tinyioc.beans.BeanDefinition;
+import com.chenbuer.tinyioc.beans.factory.AbstractBeanFactory;
 import com.chenbuer.tinyioc.beans.factory.AutowireCapableBeanFactory;
-import com.chenbuer.tinyioc.beans.factory.BeanFactory;
 import com.chenbuer.tinyioc.beans.io.ResourceLoader;
-import com.chenbuer.tinyioc.xml.XmlBeanDefinitionReader;
+import com.chenbuer.tinyioc.beans.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 
 import java.util.Map;
@@ -24,7 +24,7 @@ public class BeanFactoryTest {
 
         // 2.实例化所有的bean
         Map<String, BeanDefinition> registry = xmlBeanDefinitionReader.getRegistry();
-        BeanFactory factory = new AutowireCapableBeanFactory();
+        AbstractBeanFactory factory = new AutowireCapableBeanFactory();
         for (Map.Entry<String, BeanDefinition> beanInfo : registry.entrySet()) {
             factory.registerBeanDefinition(beanInfo.getKey(),beanInfo.getValue());
         }
