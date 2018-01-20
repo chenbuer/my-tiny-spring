@@ -18,6 +18,24 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory{
         return bean;
     }
 
+    /**
+     * 创建一个bean实例
+     * @param beanDefinition
+     * @return
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    private Object createBeanInstance(BeanDefinition beanDefinition) throws IllegalAccessException, InstantiationException {
+        return beanDefinition.getBeanClass().newInstance();
+    }
+
+    /**
+     * 给创建的bean实例设置属性值
+     * @param bean
+     * @param beanDefinition
+     * @throws NoSuchFieldException
+     * @throws IllegalAccessException
+     */
     private void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws NoSuchFieldException, IllegalAccessException {
         List<PropertyValue> propertyValueList = beanDefinition.getPropertyValues().getPropertyValueList();
         for (PropertyValue propertyValue : propertyValueList) {
@@ -26,9 +44,5 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory{
             declaredField.set(bean, propertyValue.getValue());
 
         }
-    }
-
-    private Object createBeanInstance(BeanDefinition beanDefinition) throws IllegalAccessException, InstantiationException {
-        return beanDefinition.getBeanClass().newInstance();
     }
 }
