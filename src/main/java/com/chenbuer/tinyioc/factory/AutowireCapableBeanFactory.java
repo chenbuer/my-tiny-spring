@@ -37,7 +37,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory{
      * @throws NoSuchFieldException
      * @throws IllegalAccessException
      */
-    private void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws NoSuchFieldException, IllegalAccessException {
+    private void applyPropertyValues(Object bean, BeanDefinition beanDefinition) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
         List<PropertyValue> propertyValueList = beanDefinition.getPropertyValues().getPropertyValueList();
         for (PropertyValue propertyValue : propertyValueList) {
             Field declaredField = bean.getClass().getDeclaredField(propertyValue.getName());

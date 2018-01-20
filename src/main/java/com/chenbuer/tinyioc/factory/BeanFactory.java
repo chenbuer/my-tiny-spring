@@ -7,7 +7,7 @@ import com.chenbuer.tinyioc.BeanDefinition;
  */
 public interface BeanFactory {
 
-    Object getBean(String name);
+    Object getBean(String name) throws IllegalAccessException, NoSuchFieldException, InstantiationException;
 
     void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception;
 }

@@ -25,8 +25,7 @@ public class BeanFactoryTest {
         // 2.实例化所有的bean
         Map<String, BeanDefinition> registry = xmlBeanDefinitionReader.getRegistry();
         BeanFactory factory = new AutowireCapableBeanFactory();
-        for (Map.Entry<String, BeanDefinition> beanInfo:
-             registry.entrySet()) {
+        for (Map.Entry<String, BeanDefinition> beanInfo : registry.entrySet()) {
             factory.registerBeanDefinition(beanInfo.getKey(),beanInfo.getValue());
         }
 

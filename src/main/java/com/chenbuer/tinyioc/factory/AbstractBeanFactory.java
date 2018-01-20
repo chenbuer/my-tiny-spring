@@ -14,8 +14,18 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
 
     @Override
-    public Object getBean(String name) {
-        return beanDefinitionMap.get(name).getBean();
+    public Object getBean(String name) throws IllegalAccessException, NoSuchFieldException, InstantiationException {
+        BeanDefinition beanDefinition = beanDefinitionMap.get(name);
+        if (null == beanDefinition){
+            // todo: beanDefintion都是什么时候被置的值
+            throw new IllegalArgumentException("no bean named "+ name + "is defined.");
+        }
+        Object bean = beanDefinition.getBean();
+        if (null == bean){
+            // todo:这个时候才表示该bean没有被实例化
+            doCreateBean(beanDefinition);
+        }
+        return bean;
     }
 
     @Override
