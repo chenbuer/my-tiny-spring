@@ -1,14 +1,20 @@
 package com.chenbuer.tinyioc.context;
 
 import com.chenbuer.tinyioc.beans.BeanDefinition;
+import com.chenbuer.tinyioc.beans.factory.AbstractBeanFactory;
 
 /**
  * Created by buer on 2018/1/20.
  */
 public class ClassPathXmlApplicationContext extends AbstractApplicationContext{
-    @Override
-    public Object getBean(String name) throws IllegalAccessException, NoSuchFieldException, InstantiationException {
-        return null;
+
+
+    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory) {
+        super(beanFactory);
     }
 
+    @Override
+    public void refresh() throws Exception {
+        super.refresh();
+    }
 }
