@@ -1,14 +1,14 @@
 参考[tiny-spring](https://github.com/code4craft/tiny-spring)
 
-### 理解：
+### IoC
 #### step4
-1. AbstractBeanDefinitionReader中的registry（类型为Map<String, BeanDefinition> registry）已经有了bean的工厂的意义，但是在AbstractBeanDefinitionReader并没有将BeanDefinition中的bean字段实例化而已。
+1. `AbstractBeanDefinitionReader`中的registry（类型为`Map<String, BeanDefinition> registry`）已经有了bean的工厂的意义，但是在`AbstractBeanDefinitionReader`并没有将`BeanDefinition`中的`bean`字段实例化而已。
 
-2. 上面的表述的正确的`AbstractBeanDefinitionReader`中的`registry`是一个HashMap<String, BeanDefinition>；
-而`AbstractBeanFactory`的`beanDefinitionMap`是ConcurrentHashMap<String, BeanDefinition>()。
+2. 上面的表述的正确的`AbstractBeanDefinitionReader`中的`registry`是一个`HashMap<String, BeanDefinition>`；
+而`AbstractBeanFactory`的`beanDefinitionMap`是`ConcurrentHashMap<String, BeanDefinition>()`。
 我个人理解之所以要怎么做，是为了各司其职：
     - `AbstractBeanDefinitionReader`是为了读取xml中定义的bean信息
-    - `AbstractBeanFactory`是为了的根据上面获取到信息实例化bean（BeanFactory.registerBeanDefinition）和根据beanName获取到bean实例（BeanFactory.getBean）.
+    - `AbstractBeanFactory`是为了的根据上面获取到信息实例化`bean`（`BeanFactory.registerBeanDefinition`）和根据`beanName`获取到`bean`实例（`BeanFactory.getBean`）.
 
 3. 实例化bean（`BeanFactory.registerBeanDefinition`）完全是利用反射完成：
     - 生成对象是`class.newInstance`
@@ -24,8 +24,10 @@
 解决步骤：
     - 首先：bean的初始化是放在`doCreateBean`方法中完成的
     - 其次：原来调用`doCreateBean`是在`registerBeanDefinition`中完成的，现在在这个步骤中不需要实例化bean，只需要在`beanDefinitionMap`中注册一下
-    - 最后：将`doCreateBean`放到getBean中来。（见`AbstractBeanFactory`）
+    - 最后：将`doCreateBean`放到`getBean`中来。（见`AbstractBeanFactory`）
 
 
+### AOP
+#### step7
 
 
