@@ -1,7 +1,7 @@
-package com.chenbuer.factory;
+package com.chenbuer.tinyioc.factory;
 
-import com.chenbuer.HelloWorldService;
-import com.chenbuer.OutputService;
+import com.chenbuer.tinyioc.HelloWorldService;
+import com.chenbuer.tinyioc.OutputService;
 import com.chenbuer.tinyioc.beans.BeanDefinition;
 import com.chenbuer.tinyioc.beans.factory.AbstractBeanFactory;
 import com.chenbuer.tinyioc.beans.factory.AutowireCapableBeanFactory;

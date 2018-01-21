@@ -1,4 +1,4 @@
-package com.chenbuer;
+package com.chenbuer.tinyioc;
 
 /**
  * Created by buer on 2018/1/20.

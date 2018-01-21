@@ -1,4 +1,4 @@
-package com.chenbuer.xml.dom4j;
+package com.chenbuer.tinyioc.xml.dom4j;
 
 import org.dom4j.Attribute;
 import org.dom4j.DocumentException;
