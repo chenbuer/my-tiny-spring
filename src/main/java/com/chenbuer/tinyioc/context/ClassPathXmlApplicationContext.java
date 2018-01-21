@@ -16,14 +16,15 @@ public class ClassPathXmlApplicationContext extends AbstractApplicationContext{
 
     private String configLocation;
 
-    public ClassPathXmlApplicationContext(String configLocation) {
+    public ClassPathXmlApplicationContext(String configLocation) throws Exception {
         // todo:要是没有配置beanFactory，就用AutowireCapableBeanFactory
         this(new AutowireCapableBeanFactory(), configLocation);
     }
 
-    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) {
+    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) throws  Exception{
         super(beanFactory);
         this.configLocation = configLocation;
+        refresh();
     }
 
     @Override

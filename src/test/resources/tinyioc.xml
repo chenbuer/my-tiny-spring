@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean name="outputService" class="com.chenbuer.OutputService">
+    <bean name="outputService" class="com.chenbuer.tinyioc.OutputService">
         <property name="helloWorldService" ref="helloWorldService"></property>
     </bean>
 
-    <bean name="hw" class="com.chenbuer.HelloWorldService">
+    <bean name="hw" class="com.chenbuer.tinyioc.HelloWorldService">
         <property name="text" value="hw"></property>
     </bean>
 
-    <bean name="helloWorldService" class="com.chenbuer.HelloWorldService">
+    <bean name="helloWorldService" class="com.chenbuer.tinyioc.HelloWorldService">
         <property name="text" value="Hello World!"></property>
     </bean>
 
