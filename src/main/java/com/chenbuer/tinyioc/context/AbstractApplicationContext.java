@@ -13,6 +13,9 @@ public abstract class AbstractApplicationContext implements ApplicationContext{
         this.beanFactory = beanFactory;
     }
 
+    /**
+     * 用它进行bean的初始化
+     */
     public void refresh() throws Exception {
 
     }
