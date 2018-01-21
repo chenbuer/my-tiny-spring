@@ -1,6 +1,6 @@
 参考[tiny-spring](https://github.com/code4craft/tiny-spring)
 
-### IoC
+### [IoC](http://www.cnblogs.com/liuhaorain/p/3747470.html#title_3)
 #### step4
 1. `AbstractBeanDefinitionReader`中的registry（类型为`Map<String, BeanDefinition> registry`）已经有了bean的工厂的意义，但是在`AbstractBeanDefinitionReader`并没有将`BeanDefinition`中的`bean`字段实例化而已。
 
