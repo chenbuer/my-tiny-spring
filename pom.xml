@@ -40,6 +40,12 @@
                 <artifactId>dom4j</artifactId>
                 <version>1.6.1</version>
             </dependency>
+            <!--在AOP才需要的-->
+            <dependency>
+                <groupId>aopalliance</groupId>
+                <artifactId>aopalliance</artifactId>
+                <version>1.0</version>
+            </dependency>
         </dependencies>
 
     <build>
