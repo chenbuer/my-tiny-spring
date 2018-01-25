@@ -28,6 +28,17 @@
 
 
 ### AOP
+
+### 动态代理方法
+- jdk动态代理（必须是基于接口编程）
+    - jdk动态代理的织入逻辑需要实现接口InvocationHandler（译：调用 句柄）的invoke方法（注意：实现类中需要有被代理的对象Subject subject）
+    - 使用的时候，用的Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)来获取代理对象
+- cglib动态代理（基于继承）
+    - 织入逻辑需要实现MethodInterceptor（译：方法 拦截）的intercept方法
+    - 使用的时候new一个Enhancer（译：增强）,被代理的类用setSuperClass，织入逻辑用setCallback，然后create一个代理对象。
+- 两个的重点的都是他们的织入逻辑的书写，也就是实现invocationHandler和MethodInterceptor两个实现类。
+- 个人理解其实都是提供了一套动态生成字节码的模板
+
 #### step7
 
 

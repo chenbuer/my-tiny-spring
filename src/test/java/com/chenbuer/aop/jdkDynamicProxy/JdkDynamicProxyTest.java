@@ -18,7 +18,7 @@ public class JdkDynamicProxyTest {
         Class<?> proxyClass = Proxy.getProxyClass(JdkDynamicProxyTest.class.getClassLoader(),
                 Subject.class);
         Constructor<?> constructor = proxyClass.getConstructor(InvocationHandler.class);
-        ProxyHandler proxyHandler = new ProxyHandler(new MySubject());
+        MyInvocationHandler proxyHandler = new MyInvocationHandler(new MySubject());
         Subject proxyObj = (Subject) constructor.newInstance(proxyHandler);
         proxyObj.sayHello();
     }
@@ -27,7 +27,7 @@ public class JdkDynamicProxyTest {
     public void test2() throws Exception{
         Subject proxyObj = (Subject) Proxy.newProxyInstance(JdkDynamicProxyTest.class.getClassLoader(),
                 new Class[]{Subject.class},
-                new ProxyHandler(new MySubject()));
+                new MyInvocationHandler(new MySubject()));
         proxyObj.sayHello();
     }
 }

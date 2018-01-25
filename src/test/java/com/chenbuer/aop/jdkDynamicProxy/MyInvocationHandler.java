@@ -6,11 +6,11 @@ import java.lang.reflect.Method;
 /**
  * Created by buer on 2018/1/24.
  */
-public class ProxyHandler implements InvocationHandler {
+public class MyInvocationHandler implements InvocationHandler {
 
     private Subject subject ;
 
-    public ProxyHandler(Subject subject) {
+    public MyInvocationHandler(Subject subject) {
         this.subject = subject;
     }
 
