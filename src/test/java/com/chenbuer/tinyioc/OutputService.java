@@ -4,20 +4,20 @@ package com.chenbuer.tinyioc;
  * Created by buer on 2018/1/20.
  */
 public class OutputService {
-    HelloWorldService helloWorldService;
+    HelloWorldServiceImpl helloWorldServiceImpl;
 
-    public HelloWorldService getHelloWorldService() {
-        return helloWorldService;
+    public HelloWorldServiceImpl getHelloWorldServiceImpl() {
+        return helloWorldServiceImpl;
     }
 
-    public void setHelloWorldService(HelloWorldService helloWorldService) {
-        this.helloWorldService = helloWorldService;
+    public void setHelloWorldServiceImpl(HelloWorldServiceImpl helloWorldServiceImpl) {
+        this.helloWorldServiceImpl = helloWorldServiceImpl;
     }
 
     @Override
     public String toString() {
         return "OutputService{" +
-                "helloWorldService=" + helloWorldService +
+                "helloWorldServiceImpl=" + helloWorldServiceImpl +
                 '}';
     }
 }

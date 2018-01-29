@@ -2,14 +2,14 @@
 <beans>
 
     <bean name="outputService" class="com.chenbuer.tinyioc.OutputService">
-        <property name="helloWorldService" ref="helloWorldService"></property>
+        <property name="helloWorldServiceImpl" ref="helloWorldServiceImpl"></property>
     </bean>
 
-    <bean name="hw" class="com.chenbuer.tinyioc.HelloWorldService">
+    <bean name="hw" class="com.chenbuer.tinyioc.HelloWorldServiceImpl">
         <property name="text" value="hw"></property>
     </bean>
 
-    <bean name="helloWorldService" class="com.chenbuer.tinyioc.HelloWorldService">
+    <bean name="helloWorldServiceImpl" class="com.chenbuer.tinyioc.HelloWorldServiceImpl">
         <property name="text" value="Hello World!"></property>
     </bean>
 
