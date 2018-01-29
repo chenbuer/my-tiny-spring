@@ -13,7 +13,7 @@ public class TargetSource {
     private Class targetClass;
 
     /**
-     * 被代理的对象实现的接口
+     * 被代理的对象实现的接口【注：必须写接口，写实现类会报错】
      */
     private Object target;
 
