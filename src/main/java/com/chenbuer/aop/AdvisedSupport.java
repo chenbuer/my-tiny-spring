@@ -9,9 +9,10 @@ import org.aopalliance.intercept.MethodInterceptor;
  */
 public class AdvisedSupport {
 
-    // 被代理的对象
+    // 被代理的对象（包括具体的对象和该对象所属的类）
     private TargetSource targetSource;
 
+    // czy:此处应理解为要被代理的方法
     private MethodInterceptor methodInterceptor;
 
     public TargetSource getTargetSource() {

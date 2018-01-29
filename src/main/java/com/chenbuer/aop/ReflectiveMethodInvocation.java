@@ -6,6 +6,7 @@ import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Method;
 
 /**
+ * 这个是织入的方法，并且实现了aop的标准
  * Created by buer on 2018/1/21.
  */
 public class ReflectiveMethodInvocation implements MethodInvocation {
