@@ -12,7 +12,7 @@ public class AdvisedSupport {
     // 被代理的对象（包括具体的对象和该对象所属的类）
     private TargetSource targetSource;
 
-    // czy:此处应理解为要被代理的方法
+    // 此处是拦截器，设置具体的织入逻辑
     private MethodInterceptor methodInterceptor;
 
     public TargetSource getTargetSource() {

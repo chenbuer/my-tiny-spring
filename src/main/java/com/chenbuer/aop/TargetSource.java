@@ -1,5 +1,7 @@
 package com.chenbuer.aop;
 
+import com.chenbuer.tinyioc.HelloWorldService;
+
 /**
  * 被代理的对象
  * Created by buer on 2018/1/21.
@@ -11,7 +13,7 @@ public class TargetSource {
     private Class targetClass;
 
     /**
-     * 被代理的对象
+     * 被代理的对象实现的接口
      */
     private Object target;
 
