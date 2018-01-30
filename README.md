@@ -40,5 +40,21 @@
 - 个人理解其实都是提供了一套动态生成字节码的模板
 
 #### step7
+1. 原作者说：
+> 在Spring AOP中，我觉得最重要的两个角色，就是我们熟悉的MethodInterceptor和MethodInvocation（这两个角色都是AOP联盟的标准），它们分别对应AOP中两个基本角色：Advice和Joinpoint。Advice定义了在切点指定的逻辑，而Joinpoint则代表切点。
+
+- MethodInterceptor
+    - 在CGlib中也是用的MethodInterceptor，但是我们这里用的是AOP联盟中的。实现这个接口的invoke方法，完成Advice的逻辑。具体可以看TimerInterceptor和AdvisedSupport。
+    - AdvisedSupport中设置了要被代理的对象和advise。
+
+- MethodInvocation
+    - 上面的MethodInterceptor接口只有一个函数invoke的入参就是MethodInvocation实例。TimerInterceptor中的使用该实例的时候就是使用了他的proceed()【译：前进，（沿特定路线）行进】方法
+    - 他的实现主要体现在`ReflectiveMethodInvocation`类中，它的主要方法就是proceed，如下:
+    ```java
+    method.invoke(target, args)
+    ```
+    而`method`,`target`,`args`就是`ReflectiveMethodInvocation`的三个字段。
+
+- JdkDynamicAopProxy
 
 
