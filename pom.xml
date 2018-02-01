@@ -52,6 +52,13 @@
                 <artifactId>cglib</artifactId>
                 <version>3.2.6</version>
             </dependency>
+            <!--在step8的时候用到-->
+            <dependency>
+                <groupId>aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.5.4</version>
+                <type>pom</type>
+            </dependency>
 
         </dependencies>
 
