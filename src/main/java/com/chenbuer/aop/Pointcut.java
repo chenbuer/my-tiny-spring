@@ -1,6 +1,6 @@
 package com.chenbuer.aop;
 
-public interface PointCut {
+public interface Pointcut {
 
     ClassFilter getClassFilter();
 
