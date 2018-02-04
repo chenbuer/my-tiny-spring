@@ -9,6 +9,10 @@ import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * czy：借鉴AspecJ的语法实现了一个Pointcut描述方法
+ * AspectJ是实现AOP的众多方法中的一种。但是完全使用它很复杂，相当于重新学习一个语言。所以只利用了AspectJ描述Pointcut的语言。
+ */
 public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodMatcher {
     private PointcutParser pointcutParser;
 
