@@ -24,6 +24,10 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
      */
     private String expression;
 
+    /**
+     * 利用pointParser解析expression之后就得到它
+     * 把它看做在asepctJ下的具体的pointcut对象就好了
+     */
     private PointcutExpression pointcutExpression;
 
     private static final Set<PointcutPrimitive> DEFAULT_SUPPORT_PRIMITIVES = new HashSet<PointcutPrimitive>();
@@ -101,7 +105,7 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
     @Override
     public boolean matches(Method method, Class targetClass) {
         checkReadyToMatch();
-        ShadowMatch shadowMatch = pointcutExpression.matchesAdviceExecution(method);
+        ShadowMatch shadowMatch = pointcutExpression.matchesMethodExecution(method);
         if (shadowMatch.alwaysMatches()) {
             return true;
         } else if (shadowMatch.neverMatches()) {
