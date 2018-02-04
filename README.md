@@ -39,6 +39,17 @@
 - 两个的重点的都是他们的织入逻辑的书写，也就是实现invocationHandler和MethodInterceptor两个实现类。
 - 个人理解其实都是提供了一套动态生成字节码的模板
 
+#### [关于AOP的几个概念](http://blog.csdn.net/zl3450341/article/details/7673938)
+> pointcut：　是一个（组）基于正则表达式的表达。就是说他本身是一个表达式，但是他是基于正则语法的。通常一个pointcut，会选取程序中的某些我们感兴趣的执行点，或者说是程序执行点的集合。
+
+> joinPoint：　通过pointcut选取出来的集合中的具体的一个执行点，就叫JoinPoint.
+
+> Advice：　在选取出来的JoinPoint上要执行的操作、逻辑。关于５种类型，我不多说，不懂的同学自己补基础。
+  
+> aspect：　就是我们关注点的模块化。这个关注点可能会横切多个对象和模块，事务管理是横切关注点的很好的例子。它是一个抽象的概念，从软件的角度来说是指在应用程序不同模块中的某一个领域或方面。又pointcut 和　 advice组成。
+  
+> Target：被aspectj横切的对象。我们所说的joinPoint就是Target的某一行，如方法开始执行的地方、方法类调用某个其他方法的代码。
+
 #### step7
 1. 原作者说：
 > 在Spring AOP中，我觉得最重要的两个角色，就是我们熟悉的MethodInterceptor和MethodInvocation（这两个角色都是AOP联盟的标准），它们分别对应AOP中两个基本角色：Advice和Joinpoint。Advice定义了在切点指定的逻辑，而Joinpoint则代表切点。
