@@ -19,7 +19,7 @@ public class AspectJExpressionPointcutTest {
         aspectJExpressionPointcut.setExpression(expression);
         boolean matches = aspectJExpressionPointcut.getClassFilter().matches(HelloWorldService.class);
         Assert.assertTrue(matches);
-        System.out.println(matches);
+//        System.out.println(matches);
     }
 
     @Test
@@ -31,9 +31,8 @@ public class AspectJExpressionPointcutTest {
         Method sayHello = HelloWorldServiceImpl.class.getDeclaredMethod("sayHello");
         System.out.println(sayHello);
         boolean matches = methodMatcher.matches(HelloWorldServiceImpl.class.getDeclaredMethod("sayHello"), HelloWorldServiceImpl.class);
-        System.out.println(matches);
-//        Assert.assertTrue(matches);
-
+//        System.out.println(matches);
+        Assert.assertTrue(matches);
     }
 
 }
