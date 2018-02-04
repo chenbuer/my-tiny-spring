@@ -14,8 +14,14 @@ import java.util.Set;
  * AspectJ是实现AOP的众多方法中的一种。但是完全使用它很复杂，相当于重新学习一个语言。所以只利用了AspectJ描述Pointcut的语言。
  */
 public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodMatcher {
+    /**
+     * todo：aspectj提供的pointcut的parser！！！
+     */
     private PointcutParser pointcutParser;
 
+    /**
+     * 这个就是我们手写的pointcut的正则表达式，用来匹配pointcut的，如：excution com.chenbuer.*.*(..)
+     */
     private String expression;
 
     private PointcutExpression pointcutExpression;
@@ -39,6 +45,12 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
         this(DEFAULT_SUPPORT_PRIMITIVES);
     }
 
+    /**
+     * todo：czy：利用aspectj的parser来解析Pointcut的正则表达式！！！！
+     * 这里的构造函数主要是实例化字段ponitcutParser，他也是这里最重要的角色！
+     *
+     * @param supportedPrimitives
+     */
     public AspectJExpressionPointcut(Set<PointcutPrimitive> supportedPrimitives) {
         pointcutParser = PointcutParser.
                 getPointcutParserSupportingSpecifiedPrimitivesAndUsingContextClassloaderForResolution(supportedPrimitives);
@@ -69,12 +81,23 @@ public class AspectJExpressionPointcut implements Pointcut, ClassFilter, MethodM
         return this;
     }
 
+    /**
+     * 这个是ClassFilter的matches，用来匹配Class
+     * @param targetClass
+     * @return
+     */
     @Override
     public boolean matches(Class targetClass) {
         checkReadyToMatch();
         return pointcutExpression.couldMatchJoinPointsInType(targetClass);
     }
 
+    /**
+     * 这个是MethodMatcher的matches，用来匹配方法
+     * @param method
+     * @param targetClass
+     * @return
+     */
     @Override
     public boolean matches(Method method, Class targetClass) {
         checkReadyToMatch();
