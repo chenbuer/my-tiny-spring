@@ -8,6 +8,7 @@ import org.aopalliance.intercept.MethodInterceptor;
 
 /**
  * Created by buer on 2018/2/5.
+ * 这个是将AOP加入spring时候才增加的，todo：具体是什么作用？
  */
 public class AspectJAwareAdvisorAutoProxyCreator implements BeanPostProcessor, BeanFactoryAware {
 
@@ -27,7 +28,7 @@ public class AspectJAwareAdvisorAutoProxyCreator implements BeanPostProcessor, B
             return bean;
         }
 
-        beanFactory.getbeasf
+        beanFactory.getbeasfort
     }
 
     @Override
